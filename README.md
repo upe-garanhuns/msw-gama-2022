@@ -394,6 +394,5 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 [magnet uri format]: https://en.wikipedia.org/wiki/Magnet_URI_scheme
 [mime type]: https://en.wikipedia.org/wiki/Media_type
 [mongoid]: http://docs.mongodb.org/manual/reference/object-id/
-[mongoid]: http://docs.mongodb.org/manual/reference/object-id/
 [rfc 3339]: https://tools.ietf.org/html/rfc3339
 [vat number]: https://en.wikipedia.org/wiki/VAT_identification_number
