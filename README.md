@@ -30,7 +30,7 @@ Por quem é utilizado: o validator.js é utilizado por desenvolvedores de aplica
 
 - [Link para acessar o issuetracker do projeto](https://github.com/validatorjs/validator.js/issues)
 
-- [Link para as regras de contribuição do projeto](https://github.com/validatorjs/validator.js/blob/master/CONTRIBUTING.md)
+- [Link para as regras de contribuição do projeto](https://opencollective.com/validatorjs)
 
 ## 2) Apresentação Arquitetural (Lucas)
 
@@ -41,7 +41,9 @@ JavaScript
 ### 2.2) Tecnologias:
 
 Node.js para a execução da biblioteca
+
 Mocha para testes unitários
+
 Travis CI para integração contínua
 
 ### 2.3) Arquitetura de referência:
@@ -136,7 +138,7 @@ Em resumo, o validator.js é uma biblioteca crítica no ecossistema de back-end 
 
 Nesta seção constam os arquivos de lições aprendidas para cada uma das atividades realizadas.
 
-- [Exercício 01 - Lições aprendidas](entregas/exercicio-01/licoes-aprendidas-01)
+- [Exercício 01 - Lições aprendidas](entregas/exercicio-01/licoes-aprendidas-01.md)
 
 ___
 
