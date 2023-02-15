@@ -30,7 +30,7 @@ Por quem é utilizado: o validator.js é utilizado por desenvolvedores de aplica
 
 - [Link para acessar o issuetracker do projeto](https://github.com/validatorjs/validator.js/issues)
 
-- [Link para as regras de contribuição do projeto](https://github.com/validatorjs/validator.js/blob/master/CONTRIBUTING.md)
+- [Link para as regras de contribuição do projeto](https://opencollective.com/validatorjs)
 
 ## 2) Apresentação Arquitetural (Lucas)
 
