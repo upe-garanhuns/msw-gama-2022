@@ -1,0 +1,32 @@
+diff --git a/README.md b/README.md
+index 08cbe64..3d32b9a 100644
+--- a/README.md
++++ b/README.md
+@@ -10,6 +10,27 @@
+ 
+ A library of string validators and sanitizers.
+ 
++## 1) Apresentação do Projeto (Kelvin)
++
++Descrição geral da ferramenta e suas funcionalidades:
++
++### 1.1) Visão geral: 
++
++O validator.js é uma biblioteca JavaScript que permite validar dados de entrada em formulários e outros tipos de entradas em aplicações web. Ele fornece uma ampla variedade de validações para diversos tipos de dados, como endereços de e-mail, números de telefone, senhas, entre outros. Além disso, também inclui funções para normalizar dados de entrada, tais como converter letras maiúsculas em minúsculas, remover caracteres especiais, e assim por diante.
++Objetivos de negócio: o objetivo do projeto é fornecer uma maneira fácil de validar entradas em formulários e outros tipos de entradas em aplicações web, ajudando a garantir que os dados enviados pelo usuário sejam corretos e seguros.
++Onde é utilizado: o validator.js é amplamente utilizado em aplicações web em todo o mundo, incluindo sites de comércio eletrônico, redes sociais, aplicativos de bate-papo e muito mais.
++Por quem é utilizado: o validator.js é utilizado por desenvolvedores de aplicações web em todo o mundo.
++
++- [Link para a página do projeto](https://github.com/validatorjs/validator.js)
++
++- [Link para realizar o download do pacote no NPM](https://www.npmjs.com/package/validator)
++
++- [Link para acessar o GitHub do projeto](https://github.com/validatorjs/validator.js)
++
++- [Link para acessar o issuetracker do projeto](https://github.com/validatorjs/validator.js/issues)
++
++- [Link para as regras de contribuição do projeto](https://github.com/validatorjs/validator.js/blob/master/CONTRIBUTING.md)
++
+ ## Strings only
+ 
+ **This library validates and sanitizes strings only.**
