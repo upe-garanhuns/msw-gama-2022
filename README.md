@@ -31,6 +31,46 @@ Por quem é utilizado: o validator.js é utilizado por desenvolvedores de aplica
 
 - [Link para as regras de contribuição do projeto](https://github.com/validatorjs/validator.js/blob/master/CONTRIBUTING.md)
 
+## 2) Apresentação Arquitetural (Lucas)
+
+### 2.1) Linguagens:
+
+JavaScript
+
+### 2.2) Tecnologias:
+
+Node.js para a execução da biblioteca
+Mocha para testes unitários
+Travis CI para integração contínua
+
+### 2.3) Arquitetura de referência:
+
+A biblioteca segue uma arquitetura modular e baseada em funções. Cada função é projetada para validar um tipo específico de entrada, como endereços de e-mail, números de telefone, senhas, entre outros.
+As funções são organizadas em módulos e podem ser facilmente importadas e utilizadas de acordo com as necessidades do desenvolvedor.
+
+### 2.4) Frameworks:
+
+A biblioteca não depende de nenhum framework específico.
+
+### 2.5) Estrutura de arquivos:
+
+A estrutura de arquivos da biblioteca é organizada de acordo com os padrões do Node.js, onde cada módulo é colocado em seu próprio arquivo.
+O código-fonte está localizado na pasta "src", enquanto os testes estão na pasta "test".
+
+### 2.6) Testes:
+
+A biblioteca utiliza o framework Mocha para testes unitários, o que ajuda a garantir que as funções de validação estejam funcionando corretamente.
+Além disso, a biblioteca também utiliza o Travis CI para integração contínua, o que permite que os desenvolvedores verifiquem a integridade do código em diferentes plataformas e versões do Node.js.
+
+### 2.7) Padrões:
+
+A biblioteca segue os padrões do JavaScript e do Node.js, incluindo a utilização de boas práticas de programação e nomenclatura de variáveis e funções.
+
+### 2.8) Manutenção:
+
+A biblioteca é mantida por uma comunidade de desenvolvedores no GitHub e pode receber contribuições de qualquer pessoa.
+O sistema de versionamento utilizado é o Git, com o controle de versão realizado diretamente no GitHub.
+
 ## Strings only
 
 **This library validates and sanitizes strings only.**
