@@ -72,6 +72,10 @@ A biblioteca segue os padrões do JavaScript e do Node.js, incluindo a utilizaç
 A biblioteca é mantida por uma comunidade de desenvolvedores no GitHub e pode receber contribuições de qualquer pessoa.
 O sistema de versionamento utilizado é o Git, com o controle de versão realizado diretamente no GitHub.
 
+### 2.9) Referência
+
+Informações obtidas no próprio package.json do projeto e o README do repositório oficial. A biblioteca não possui muitas dependências transitivas.
+
 ## 3) Construindo o projeto a partir do código-fonte (Gustavo)
 
 ### 3.1) Configuração do ambiente
@@ -109,6 +113,32 @@ O código-fonte do projeto validator.js é bem escrito, com uma estrutura bem de
 A falta de documentação ou orientação clara pode ser um desafio para a configuração do ambiente do projeto, especialmente para desenvolvedores iniciantes. Além disso, como o projeto é desenvolvido em JavaScript, é necessário ter um conhecimento sólido dessa linguagem para trabalhar com o código.
 No que diz respeito aos testes, o projeto possui uma boa cobertura de testes e a equipe de desenvolvimento trabalha constantemente para melhorar a qualidade dos testes e garantir a estabilidade do código. No entanto, os testes podem ser bastante extensos e exigir um tempo significativo para serem executados, o que pode dificultar a configuração do ambiente de teste e o processo de desenvolvimento em geral.
 Em resumo, apesar de ser um projeto bem escrito e documentado, a configuração do ambiente pode ser um desafio para desenvolvedores iniciantes, e a execução dos testes pode ser um processo demorado. No entanto, a equipe de desenvolvimento trabalha constantemente para melhorar a qualidade do código e facilitar a contribuição de novos desenvolvedores.
+
+# 4) Justificativa de escolha do projeto (Muryllo)
+
+### 4.1) Popularidade
+
+Há diversos argumentos que justificam a escolha de se manter o projeto validator.js, que vão desde a sua popularidade e ampla adoção no ecossistema de back-end em JavaScript, até a importância que essa biblioteca possui em termos de segurança e validação de dados em diversas aplicações web. Em termos de popularidade, o validator.js possui mais de 12 mil estrelas no GitHub, o que o coloca como uma das bibliotecas mais utilizadas para validação de dados em JavaScript. Além disso, o projeto é mantido ativamente pela comunidade, o que significa que novas atualizações e correções de bugs são frequentemente lançadas, mantendo o código seguro e atualizado.
+
+### 4.2) Segurança
+
+Em relação à importância do projeto em termos de segurança, é importante destacar que a validação de dados é um aspecto crítico em muitas aplicações web, especialmente aquelas que lidam com informações sensíveis, como dados de usuários e informações financeiras. O uso de uma biblioteca confiável e bem testada, como o validator.js, pode garantir a integridade e segurança desses dados, reduzindo o risco de violações de segurança e outros problemas relacionados.
+
+### 4.3) Reconhecimento
+
+Muitas empresas importantes no setor de tecnologia utilizam o validator.js em suas aplicações web, incluindo a **Netflix**, **Uber**, **Airbnb** e muitas outras. Essas empresas dependem do validator.js para garantir a segurança e validação de dados em seus back-ends, o que destaca ainda mais a importância crítica desse projeto no ecossistema de back-end em JavaScript.
+
+### 4.4) Ecossistema
+
+Em resumo, o validator.js é uma biblioteca crítica no ecossistema de back-end em JavaScript, amplamente utilizada por diversas empresas importantes no setor de tecnologia. A importância desse projeto em termos de segurança e validação de dados torna sua manutenção essencial para garantir a integridade e segurança de dados em muitas aplicações web.
+
+# 5) Lições aprendidas
+
+Nesta seção constam os arquivos de lições aprendidas para cada uma das atividades realizadas.
+
+- [Exercício 01 - Lições aprendidas](entregas/exercicio-01/licoes-aprendidas-01)
+
+___
 
 ## Strings only
 

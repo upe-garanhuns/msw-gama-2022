@@ -19,10 +19,9 @@
 
 ### 4. O que está deixando vocês em estado de alerta?
 
-- Identifiquem e listem aqui potenciais desafios, obstáculos. dificuldades e/ou limitações que
-precisarão ser atacados em breve;
-- Tracem estratégias para lidar com eles em tempo hábil na realização das próximas
-atividades e definam responsáveis por elas!
+- A divisão das CRs com relação aos bugs e as funcionalidades entre a equipe;
+- A diferença entre os sistemas operacionais (alguns usam MacOS, outros Windows);
+- A complexidade dos bugs que serão selecionados para a segunda iteração do projeto. Sobre esse ponto, já temos algumas ideias de CRs ou problemas a serem abordados. Estamos analisando as melhores CRs para trabalhar.
 
 ### 5. Aprendizados da atividade
 
