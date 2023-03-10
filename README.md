@@ -139,6 +139,7 @@ Em resumo, o validator.js é uma biblioteca crítica no ecossistema de back-end 
 Nesta seção constam os arquivos de lições aprendidas para cada uma das atividades realizadas.
 
 - [Exercício 01 - Lições aprendidas](entregas/exercicio-01/licoes-aprendidas-01.md)
+- [Exercício 02 - Lições aprendidas](entregas/exercicio-02/licoes-aprendidas-02.md)
 
 ___
 
