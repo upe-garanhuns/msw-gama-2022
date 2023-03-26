@@ -11,36 +11,59 @@ assignees: ''
 
 # **1)** CR de Origem (Issue de origem)
 
-![Untitled](Template%20da%20Issue%208c39f02f81ed4e14a4298ec3c6376ced/Untitled.png)
+![image](https://user-images.githubusercontent.com/32225687/227801361-46f8f6e7-0198-4b01-b43b-15a4c947ea6f.png)
 
 [[Link para a Issue original no repositório do validator.js]](https://google.com/)
 
-# 2) Estimativa de Implementação
+# 2) Análise de Impacto
 
-- Estimativa de Impacto de mudança: listem todos os artefatos que sofrerão
-impacto de mudança na realização da CR
-    
-    > Tempo em horas
-    > 
-- Estimativa de Esforço: apresentem o esforço de implementação estimado para
-realização da CR
-    
-    > Pouco | Médio | Muito
-    > 
-- Estimativa de Complexidade: apresentem a estimativa de complexidade para
-realização da CR
-    
-    > Fácil | Médio | Difícil
-    > 
+- Link do vídeo: [https://google.com](https://google.com)
 
-# 3) Análise de Impacto
+- **Artefatos envolvidos e suas localizações:**
+    
+    Descrição…
+    
+- **Como será implementada a CR e os efeitos causados pela sua implementação:**
+    
+    Descrição…
+    
+- **Complexidade de implementação:**
+    
+    Descrição…
+    
+- **Esforço de implementação:**
+    
+    Descrição…
+    
+- ******************************************************Macroatividades envolvidas:******************************************************
+    
+    Descrição…
+    
+- **Como os testes serão realizados:**
+    
+    Descrição…
+    
+- **Riscos previstos e as ações de mitigação:**
+    
+    Descrição…
+    
 
-- Acrescente um vídeo que sintetize a análise de impacto feita pelo time.
-    - Apresentem os artefatos envolvidos e suas localizações
-    - Comente como será implementada a CR e os efeitos causados pela sua
-    implementação
-    - Discutam a complexidade de implementação
-    - Discutam o esforço de implementação
-    - Listem brevemente as atividades macro
-    - Lembre-se de considerar os testes
-    - Apontem os riscos e as ações de mitigação
+# 3) Estimativa de Implementação
+
+- **Estimativa de Impacto de mudança:**
+    - ******************************************************************************Artefatos que serão impactados pela CR:******************************************************************************
+        1. Artefato 1
+        2. Artefato 2
+        3. Artefato 3
+    - ******************************************************************************Tempo em horas para a realização da CR:******************************************************************************
+        
+        > Tempo em horas
+        > 
+- **Estimativa de Esforço:**
+    - [ ]  Pouco esforço (Algumas horas de pesquisa/consulta e implementação)
+    - [ ]  Médio esforço (Algumas horas ou dias de pesquisa/consulta e implementação)
+    - [ ]  Muito esforço (Algumas horas, talvez semanas de pesquisa/consulta e implementação)
+- **Estimativa de Complexidade:**
+    - [ ]  Fácil - Apresenta complexidade relativamente baixa e possui muita assistência da comunidade e/ou da documentação do projeto subjacente.
+    - [ ]  Médio - Apresenta complexidade moderada e/ou possui considerável assistência da comunidade e/ou da documentação do projeto subjacente.
+    - [ ]  Difícil - Apresenta muita complexidade e/ou pouca ou nenhuma assistência da comunidade e/ou da documentação do projeto subjacente.
