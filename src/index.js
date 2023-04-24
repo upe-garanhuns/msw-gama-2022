@@ -79,6 +79,7 @@ import isISIN from './lib/isISIN';
 import isISBN from './lib/isISBN';
 import isISSN from './lib/isISSN';
 import isTaxID from './lib/isTaxID';
+import isCnpj from './lib/isCnpj';
 
 import isMobilePhone, { locales as isMobilePhoneLocales } from './lib/isMobilePhone';
 
@@ -231,6 +232,7 @@ const validator = {
   isLicensePlate,
   isVAT,
   ibanLocales,
+  isCnpj,
 };
 
 export default validator;
