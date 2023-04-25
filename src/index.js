@@ -69,6 +69,7 @@ import isAfter from './lib/isAfter';
 import isBefore from './lib/isBefore';
 
 import isIn from './lib/isIn';
+import isPis from './lib/isPis';
 
 import isLuhnValid from './lib/isLuhnValid';
 import isCreditCard from './lib/isCreditCard';
@@ -79,7 +80,7 @@ import isISIN from './lib/isISIN';
 import isISBN from './lib/isISBN';
 import isISSN from './lib/isISSN';
 import isTaxID from './lib/isTaxID';
-import isPis from './lib/isPis';
+import isCnpj from './lib/isCnpj';
 
 import isMobilePhone, { locales as isMobilePhoneLocales } from './lib/isMobilePhone';
 
@@ -233,6 +234,7 @@ const validator = {
   isVAT,
   isPis,
   ibanLocales,
+  isCnpj,
 };
 
 export default validator;

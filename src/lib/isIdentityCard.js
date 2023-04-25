@@ -421,6 +421,17 @@ const validators = {
       return sum + (Number(number) * (9 - index));
     }, 0);
   },
+  BR: (str) => {
+    assertString(str);
+
+    const formattedRgRegex = /^(\d{1,2}\.\d{3}\.\d{3}(-?\d{1})?)$/;
+    const cleanRgRegex = /^\d{8,9}$/;
+
+    // sanitize user input
+    const sanitized = str.trim();
+
+    return formattedRgRegex.test(sanitized) || cleanRgRegex.test(sanitized);
+  },
 };
 
 export default function isIdentityCard(str, locale) {

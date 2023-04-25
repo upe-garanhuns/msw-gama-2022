@@ -66,6 +66,8 @@ describe('Validators', () => {
         '"wrong()[]",:;<>@@gmail.com',
         'username@domain.com�',
         'username@domain.com©',
+        'username!@gmail.com',
+        'username#@gmail.com',
       ],
     });
   });
@@ -5839,6 +5841,27 @@ describe('Validators', () => {
           '219487710',
           '334705465',
           '336000842',
+        ],
+      },
+      {
+        locale: 'BR',
+        valid: [
+          '12.345.678-9',
+          '12345678',
+          '12.345.678',
+          '123456789',
+        ],
+        invalid: [
+          '1.23.45.67-89',
+          '12345678901',
+          '12345.678-9',
+          '1234567',
+          '1234.567',
+          '1234.567-8',
+          '12345.678-90',
+          '1234567-8',
+          '12345-6789',
+          'abcdefghi',
         ],
       },
     ];
@@ -12387,8 +12410,6 @@ describe('Validators', () => {
         'foo_bar',
         'foo-bar-foo',
         'foo-bar_foo',
-        'foo-bar_foo*75-b4r-**_foo',
-        'foo-bar_foo*75-b4r-**_foo-&&',
       ],
       invalid: [
         'not-----------slug',
@@ -12398,6 +12419,10 @@ describe('Validators', () => {
         '_not-slug',
         'not-slug_',
         'not slug',
+        'foo-bar_foo75-b4r-foo-',
+        'foo-bar_foo75-b4r-**_foo',
+        'foo-bar_foo75-b4r-**_foo-',
+        '€test',
       ],
     });
   });
@@ -13872,6 +13897,25 @@ describe('Validators', () => {
       args: ['invalidCountryCode'],
       error: [
         'GB999 9999 00',
+      ],
+    });
+  });
+
+  it('should validate CNPJs', () => {
+    test({
+      validator: 'isCnpj',
+      valid: [
+        '10.892.164/0001-24',
+        '10892164000124',
+        '03.778.130/0001-48',
+        '03778130000148',
+      ],
+      invalid: [
+        '12.345.678/0001-91',
+        '12345678000191',
+        '12.345.678/000190',
+        '12345678000190a',
+        '123456780001',
       ],
     });
   });
