@@ -66,6 +66,8 @@ describe('Validators', () => {
         '"wrong()[]",:;<>@@gmail.com',
         'username@domain.com�',
         'username@domain.com©',
+        'username!@gmail.com',
+        'username#@gmail.com',
       ],
     });
   });
@@ -486,6 +488,48 @@ describe('Validators', () => {
         'http://_.example.com',
       ],
       invalid: [],
+    });
+  });
+
+  it('should validate PIS without dots and hyphens', () => {
+    test({
+      validator: 'isPis',
+      args: [],
+      valid: [
+        '12078844278',
+        '12072123293',
+        '12088408420',
+        '12043371047',
+        '12079637837',
+      ],
+      invalid: [
+        '12076925242',
+        '12017217062',
+        '12014558322',
+        '12061381382',
+        '12088421742',
+      ],
+    });
+  });
+
+  it('should validate PIS with dots and hyphens', () => {
+    test({
+      validator: 'isPis',
+      args: [true],
+      valid: [
+        '120.7884.427-8',
+        '120.7212.329-3',
+        '120.8840.842-0',
+        '120.4337.104-7',
+        '120.7963.783-7',
+      ],
+      invalid: [
+        '120.7692.524-2',
+        '120.1721.706-2',
+        '120.1455.832-2',
+        '120.6138.138-2',
+        '120.8842.174-2',
+      ],
     });
   });
 
@@ -959,6 +1003,44 @@ describe('Validators', () => {
         'FFFFFFFFFFFF',
         '0102030405ab',
         '01AB03040506',
+      ],
+    });
+  });
+
+  it('should validate CPF without dots and hyphens', () => {
+    test({
+      validator: 'isCpf',
+      args: [true],
+      valid: [
+        '76514596444',
+        '68571514747',
+        '08354174255',
+        '62596371103',
+      ],
+      invalid: [
+        '19424096434',
+        '77343193139',
+        '91314324515',
+        '54364536339',
+      ],
+    });
+  });
+
+  it('should validate CPF with dots and hyphens', () => {
+    test({
+      validator: 'isCpf',
+      args: [true],
+      valid: [
+        '173.275.344-07',
+        '588.669.010-75',
+        '557.073.525-97',
+        '824.365.416-04',
+      ],
+      invalid: [
+        '194.240.964-34',
+        '773.431.931-39',
+        '913.143.245-15',
+        '543.645.363-39',
       ],
     });
   });
@@ -4359,6 +4441,13 @@ describe('Validators', () => {
         'rgba(3,3,3%,.3)',
         'rgb(101%,101%,101%)',
         'rgba(3%,3%,101%,0.3)',
+        'r         g    b(   0,         251,       222     )',
+        'r         g    ba(   0,         251,       222     )',
+        'rg ba(0, 251, 22, 0.5)',
+        'rgb( 255,255 ,255)',
+        'rgba(255, 255, 255, 0.5)',
+        'rgba(255, 255, 255, 0.5)',
+        'rgb(5%, 5%, 5%)',
         'rgb(101%,101%,101%) additional invalid string part',
         'rgba(3%,3%,101%,0.3) additional invalid string part',
       ],
@@ -4375,9 +4464,201 @@ describe('Validators', () => {
       invalid: [
         'rgb(4,4,5%)',
         'rgba(5%,5%,5%)',
+        'r         g    b(   0,         251,       222     )',
+        'r         g    ba(   0,         251,       222     )',
+      ],
+    });
+
+    // test empty options object
+    test({
+      validator: 'isRgbColor',
+      args: [{}],
+      valid: [
+        'rgb(0,0,0)',
+        'rgb(255,255,255)',
+        'rgba(0,0,0,0)',
+        'rgba(255,255,255,1)',
+        'rgba(255,255,255,.1)',
+        'rgba(255,255,255,0.1)',
+        'rgb(5%,5%,5%)',
+        'rgba(5%,5%,5%,.3)',
+      ],
+      invalid: [
+        'rgb(0,0,0,)',
+        'rgb(0,0,)',
+        'rgb(0,0,256)',
+        'rgb()',
+        'rgba(0,0,0)',
+        'rgba(255,255,255,2)',
+        'rgba(255,255,255,.12)',
+        'rgba(255,255,256,0.1)',
+        'rgb(4,4,5%)',
+        'rgba(5%,5%,5%)',
+        'rgba(3,3,3%,.3)',
+        'rgb(101%,101%,101%)',
+        'rgba(3%,3%,101%,0.3)',
+        'r         g    b(   0,         251,       222     )',
+        'r         g    ba(   0,         251,       222     )',
+        'rg ba(0, 251, 22, 0.5)',
+        'rgb( 255,255 ,255)',
+        'rgba(255, 255, 255, 0.5)',
+        'rgba(255, 255, 255, 0.5)',
+        'rgb(5%, 5%, 5%)',
+      ],
+    });
+
+    // test where includePercentValues is given as false as part of options object
+    test({
+      validator: 'isRgbColor',
+      args: [{ includePercentValues: false }],
+      valid: [
+        'rgb(5,5,5)',
+        'rgba(5,5,5,.3)',
+      ],
+      invalid: [
+        'rgb(4,4,5%)',
+        'rgba(5%,5%,5%)',
+        'r         g    b(   0,         251,       222     )',
+        'rgba(255, 255, 255 ,0.2)',
+        'r         g    ba(   0,         251,       222     )',
+      ],
+    });
+
+    // test where include percent is true explciitly
+    test({
+      validator: 'isRgbColor',
+      args: [true],
+      valid: [
+        'rgb(5,5,5)',
+        'rgba(5,5,5,.3)',
+        'rgb(0,0,0)',
+        'rgb(255,255,255)',
+        'rgba(0,0,0,0)',
+        'rgba(255,255,255,1)',
+        'rgba(255,255,255,.1)',
+        'rgba(255,255,255,0.1)',
+        'rgb(5%,5%,5%)',
+        'rgba(5%,5%,5%,.3)',
+        'rgb(5%,5%,5%)',
+        'rgba(255,255,255,0.5)',
+      ],
+      invalid: [
+        'rgba(255, 255, 255, 0.5)',
+        'rgb(5%, 5%, 5%)',
+        'rgb(4,4,5%)',
+        'rgba(5%,5%,5%)',
+        'r         g    b(   0,         251,       222     )',
+        'r         g    ba(   0,         251,       222     )',
+        'rgb(0,0,0,)',
+        'rgb(0,0,)',
+        'rgb(0,0,256)',
+        'rgb()',
+        'rgba(0,0,0)',
+        'rgba(255,255,255,2)',
+        'rgba(255,255,255,.12)',
+        'rgba(255,255,256,0.1)',
+        'rgb(4,4,5%)',
+        'rgba(5%,5%,5%)',
+        'rgba(3,3,3%,.3)',
+        'rgb(101%,101%,101%)',
+        'rgba(3%,3%,101%,0.3)',
+      ],
+    });
+
+    // test where percent value is false and allowSpaces is true as part of options object
+    test({
+      validator: 'isRgbColor',
+      args: [{ includePercentValues: false, allowSpaces: true }],
+      valid: [
+        'rgb(5,5,5)',
+        'rgba(5,5,5,.3)',
+        'rgba(255,255,255,0.2)',
+        'rgba(255, 255, 255 ,0.2)',
+      ],
+      invalid: [
+        'rgb(4,4,5%)',
+        'rgba(5%,5%,5%)',
+        'rgba(5% ,5%, 5%)',
+        'r         g    b(   0,         251,       222     )',
+        'r         g    ba(   0,         251,       222     )',
+        'rgb(0,0,)',
+        'rgb()',
+        'rgb(4,4,5%)',
+        'rgb(5%,5%,5%)',
+        'rgba(3,3,3%,.3)',
+        'rgb(101%, 101%, 101%)',
+        'rgba(3%,3%,101%,0.3)',
+      ],
+
+    });
+
+    // test where both are true as part of options object
+    test({
+      validator: 'isRgbColor',
+      args: [{ includePercentValues: true, allowSpaces: true }],
+      valid: [
+        'rgb(  5, 5, 5)',
+        'rgba(5, 5, 5, .3)',
+        'rgb(0, 0, 0)',
+        'rgb(255, 255, 255)',
+        'rgba(0, 0, 0, 0)',
+        'rgba(255, 255, 255, 1)',
+        'rgba(255, 255, 255, .1)',
+        'rgba(255, 255, 255, 0.1)',
+        'rgb(5% ,5% ,5%)',
+        'rgba(5%,5%,5%, .3)',
+      ],
+      invalid: [
+        'r         g    b(   0,         251,       222     )',
+        'rgb(4,4,5%)',
+        'rgb(101%,101%,101%)',
+
+      ],
+    });
+
+    // test where allowSpaces is false as part of options object
+    test({
+      validator: 'isRgbColor',
+      args: [{ includePercentValues: true, allowSpaces: false }],
+      valid: [
+        'rgb(5,5,5)',
+        'rgba(5,5,5,.3)',
+        'rgb(0,0,0)',
+        'rgb(255,255,255)',
+        'rgba(0,0,0,0)',
+        'rgba(255,255,255,1)',
+        'rgba(255,255,255,.1)',
+        'rgba(255,255,255,0.1)',
+        'rgb(5%,5%,5%)',
+        'rgba(5%,5%,5%,.3)',
+
+      ],
+      invalid: [
+        'rgb( 255,255 ,255)',
+        'rgba(255, 255, 255, 0.5)',
+        'rgb(5%, 5%, 5%)',
+        'rgba(255, 255, 255, 0.5)',
+        'rgb(4,4,5%)',
+        'rgba(5%,5%,5%)',
+        'r         g    b(   0,         251,       222     )',
+        'r         g    ba(   0,         251,       222     )',
+        'rgb(0,0,0,)',
+        'rgb(0,0,)',
+        'rgb(0,0,256)',
+        'rgb()',
+        'rgba(0,0,0)',
+        'rgba(255,255,255,2)',
+        'rgba(255,255,255,.12)',
+        'rgba(255,255,256,0.1)',
+        'rgb(4,4,5%)',
+        'rgba(5%,5%,5%)',
+        'rgba(3,3,3%,.3)',
+        'rgb(101%,101%,101%)',
+        'rgba(3%,3%,101%,0.3)',
       ],
     });
   });
+
 
   it('should validate ISRC code strings', () => {
     test({
@@ -5153,6 +5434,8 @@ describe('Validators', () => {
         '2718760626256570',
         '6765780016990268',
         '4716989580001715211',
+        '6396827370876380',
+        '5020198842623966',
         '8171999927660000',
         '8171999900000000021',
       ],
@@ -5169,6 +5452,8 @@ describe('Validators', () => {
         '623491788middle2863855',
         '6234917882863855suffix',
         '4716989580001715213',
+        '63961111115582730876380',
+        '5020345678198842623966',
       ],
     });
   });
@@ -5797,6 +6082,27 @@ describe('Validators', () => {
           '219487710',
           '334705465',
           '336000842',
+        ],
+      },
+      {
+        locale: 'BR',
+        valid: [
+          '12.345.678-9',
+          '12345678',
+          '12.345.678',
+          '123456789',
+        ],
+        invalid: [
+          '1.23.45.67-89',
+          '12345678901',
+          '12345.678-9',
+          '1234567',
+          '1234.567',
+          '1234.567-8',
+          '12345.678-90',
+          '1234567-8',
+          '12345-6789',
+          'abcdefghi',
         ],
       },
     ];
@@ -12345,8 +12651,6 @@ describe('Validators', () => {
         'foo_bar',
         'foo-bar-foo',
         'foo-bar_foo',
-        'foo-bar_foo*75-b4r-**_foo',
-        'foo-bar_foo*75-b4r-**_foo-&&',
       ],
       invalid: [
         'not-----------slug',
@@ -12356,6 +12660,10 @@ describe('Validators', () => {
         '_not-slug',
         'not-slug_',
         'not slug',
+        'foo-bar_foo75-b4r-foo-',
+        'foo-bar_foo75-b4r-**_foo',
+        'foo-bar_foo75-b4r-**_foo-',
+        '€test',
       ],
     });
   });
@@ -13830,6 +14138,25 @@ describe('Validators', () => {
       args: ['invalidCountryCode'],
       error: [
         'GB999 9999 00',
+      ],
+    });
+  });
+
+  it('should validate CNPJs', () => {
+    test({
+      validator: 'isCnpj',
+      valid: [
+        '10.892.164/0001-24',
+        '10892164000124',
+        '03.778.130/0001-48',
+        '03778130000148',
+      ],
+      invalid: [
+        '12.345.678/0001-91',
+        '12345678000191',
+        '12.345.678/000190',
+        '12345678000190a',
+        '123456780001',
       ],
     });
   });
