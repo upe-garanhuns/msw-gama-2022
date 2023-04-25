@@ -141,6 +141,7 @@ Nesta seção constam os arquivos de lições aprendidas para cada uma das ativi
 - [Exercício 01 - Lições aprendidas](entregas/exercicio-01/licoes-aprendidas-01.md)
 - [Exercício 02 - Lições aprendidas](entregas/exercicio-02/licoes-aprendidas-02.md)
 - [Exercício 03 - Lições aprendidas](entregas/exercicio-03/licoes-aprendidas-03.md)
+- [Exercício 04 - Lições aprendidas](entregas/exercicio-04/licoes-aprendidas-04.md)
 
 ___
 
