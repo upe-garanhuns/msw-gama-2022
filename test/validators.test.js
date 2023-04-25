@@ -66,6 +66,8 @@ describe('Validators', () => {
         '"wrong()[]",:;<>@@gmail.com',
         'username@domain.com�',
         'username@domain.com©',
+        'username!@gmail.com',
+        'username#@gmail.com',
       ],
     });
   });
