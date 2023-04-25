@@ -489,6 +489,48 @@ describe('Validators', () => {
     });
   });
 
+  it('should validate PIS without dots and hyphens', () => {
+    test({
+      validator: 'isPis',
+      args: [],
+      valid: [
+        '12078844278',
+        '12072123293',
+        '12088408420',
+        '12043371047',
+        '12079637837',
+      ],
+      invalid: [
+        '12076925242',
+        '12017217062',
+        '12014558322',
+        '12061381382',
+        '12088421742',
+      ],
+    });
+  });
+
+  it('should validate PIS with dots and hyphens', () => {
+    test({
+      validator: 'isPis',
+      args: [true],
+      valid: [
+        '120.7884.427-8',
+        '120.7212.329-3',
+        '120.8840.842-0',
+        '120.4337.104-7',
+        '120.7963.783-7',
+      ],
+      invalid: [
+        '120.7692.524-2',
+        '120.1721.706-2',
+        '120.1455.832-2',
+        '120.6138.138-2',
+        '120.8842.174-2',
+      ],
+    });
+  });
+
   it('should validate URLs that do not have a TLD', () => {
     test({
       validator: 'isURL',
