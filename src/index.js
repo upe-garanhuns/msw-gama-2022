@@ -69,6 +69,7 @@ import isAfter from './lib/isAfter';
 import isBefore from './lib/isBefore';
 
 import isIn from './lib/isIn';
+import isPis from './lib/isPis';
 
 import isLuhnValid from './lib/isLuhnValid';
 import isCreditCard from './lib/isCreditCard';
@@ -231,6 +232,7 @@ const validator = {
   isTime,
   isLicensePlate,
   isVAT,
+  isPis,
   ibanLocales,
   isCnpj,
 };
