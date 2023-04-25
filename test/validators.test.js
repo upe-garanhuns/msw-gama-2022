@@ -12345,8 +12345,6 @@ describe('Validators', () => {
         'foo_bar',
         'foo-bar-foo',
         'foo-bar_foo',
-        'foo-bar_foo*75-b4r-**_foo',
-        'foo-bar_foo*75-b4r-**_foo-&&',
       ],
       invalid: [
         'not-----------slug',
@@ -12356,6 +12354,10 @@ describe('Validators', () => {
         '_not-slug',
         'not-slug_',
         'not slug',
+        'foo-bar_foo75-b4r-foo-',
+        'foo-bar_foo75-b4r-**_foo',
+        'foo-bar_foo75-b4r-**_foo-',
+        '€test',
       ],
     });
   });
