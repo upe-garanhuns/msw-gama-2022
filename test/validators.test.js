@@ -1007,6 +1007,44 @@ describe('Validators', () => {
     });
   });
 
+  it('should validate CPF without dots and hyphens', () => {
+    test({
+      validator: 'isCpf',
+      args: [true],
+      valid: [
+        '76514596444',
+        '68571514747',
+        '08354174255',
+        '62596371103',
+      ],
+      invalid: [
+        '19424096434',
+        '77343193139',
+        '91314324515',
+        '54364536339',
+      ],
+    });
+  });
+
+  it('should validate CPF with dots and hyphens', () => {
+    test({
+      validator: 'isCpf',
+      args: [true],
+      valid: [
+        '173.275.344-07',
+        '588.669.010-75',
+        '557.073.525-97',
+        '824.365.416-04',
+      ],
+      invalid: [
+        '194.240.964-34',
+        '773.431.931-39',
+        '913.143.245-15',
+        '543.645.363-39',
+      ],
+    });
+  });
+
   it('should validate IP addresses', () => {
     test({
       validator: 'isIP',

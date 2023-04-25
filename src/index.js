@@ -14,6 +14,7 @@ import isIPRange from './lib/isIPRange';
 import isFQDN from './lib/isFQDN';
 import isDate from './lib/isDate';
 import isTime from './lib/isTime';
+import isCpf from './lib/isCpf';
 
 import isBoolean from './lib/isBoolean';
 import isLocale from './lib/isLocale';
@@ -230,6 +231,7 @@ const validator = {
   isTaxID,
   isDate,
   isTime,
+  isCpf,
   isLicensePlate,
   isVAT,
   isPis,
