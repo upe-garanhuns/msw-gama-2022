@@ -14,6 +14,7 @@ import isIPRange from './lib/isIPRange';
 import isFQDN from './lib/isFQDN';
 import isDate from './lib/isDate';
 import isTime from './lib/isTime';
+import isCpf from './lib/isCpf';
 
 import isBoolean from './lib/isBoolean';
 import isLocale from './lib/isLocale';
@@ -69,6 +70,7 @@ import isAfter from './lib/isAfter';
 import isBefore from './lib/isBefore';
 
 import isIn from './lib/isIn';
+import isPis from './lib/isPis';
 
 import isLuhnValid from './lib/isLuhnValid';
 import isCreditCard from './lib/isCreditCard';
@@ -79,6 +81,7 @@ import isISIN from './lib/isISIN';
 import isISBN from './lib/isISBN';
 import isISSN from './lib/isISSN';
 import isTaxID from './lib/isTaxID';
+import isCnpj from './lib/isCnpj';
 
 import isMobilePhone, { locales as isMobilePhoneLocales } from './lib/isMobilePhone';
 
@@ -228,9 +231,12 @@ const validator = {
   isTaxID,
   isDate,
   isTime,
+  isCpf,
   isLicensePlate,
   isVAT,
+  isPis,
   ibanLocales,
+  isCnpj,
 };
 
 export default validator;
